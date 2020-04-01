@@ -1,7 +1,6 @@
 import React from 'react';
-import cn from 'classnames/bind';
-import styles from './loaders.css';
-const cx = cn.bind(styles);
+import cx from 'classnames';
+import styles from  './loaders.css';
 
 const Loader = ({ height, width, color}) => {
 

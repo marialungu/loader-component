@@ -2,42 +2,35 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 // Convert CJS modules to ES6, so they can be included in a bundle
 import commonjs from 'rollup-plugin-commonjs';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import postcssModules from 'postcss-modules';
-
-const cssExportMap = {};
 
 const config = {
     input: 'src/loaders.js',
     output: {
+        name: 'loader-bounce',
         file: 'dist/bundle.js',
-        format: 'cjs'
+        sourcemap: true,
+        format: 'umd',
+        globals: { react: 'React' },
     },
     external: [
         'react',
-        'react-proptypes'
+        'react-dom'
     ],
     plugins: [
-        resolve(),
+        peerDepsExternal(),
         postcss({
-            plugins: [
-                postcssModules({
-                    getJSON (id, exportTokens) {
-                        cssExportMap[id] = exportTokens;
-                    }
-                })
-            ],
-            getExportNamed: false,
-            getExport (id) {
-                return cssExportMap[id];
-            },
-            extract: 'dist/styles.css',
+            extract: false,
+            modules: true,
+            use: ['sass'],
         }),
         babel({
             exclude: 'node_modules/**',
             presets: ['@babel/env', '@babel/preset-react']
         }),
-        commonjs()
+        resolve(),
+        commonjs(),
     ],
 }
 

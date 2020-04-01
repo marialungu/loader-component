@@ -13,7 +13,7 @@ Installation
 Demo
 ------
 
-![Demo](https://giphy.com/gifs/WpafqnqRUCzxLK6GpN/html5)
+![Demo of loader](demo.gif)
 
 Usage
 ------

@@ -13,7 +13,7 @@ Installation
 Demo
 ------
 
-![Demo of loader](https://github.com/marialungu/loader-component/blob/master/demo.gif)
+![Demo of loader](https://media.giphy.com/media/WpafqnqRUCzxLK6GpN/giphy.gif)
 
 Usage
 ------

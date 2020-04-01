@@ -13,7 +13,7 @@ Installation
 Demo
 ------
 
-![Demo of loader](demo.gif)
+![Demo of loader](https://github.com/marialungu/loader-component/blob/master/demo.gif)
 
 Usage
 ------
